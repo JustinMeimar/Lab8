@@ -12,13 +12,14 @@ public class CustomListTest {
 
     public CustomList MockCityList() {
        list = new CustomList(null, new ArrayList < > ());
-        return list;
+       return list;
     }
     /**
      * this gets size of the list
      * @return
      */
     public int getCount(){
+        return 0;
     }
     /**
      * this adds a city object to the list
