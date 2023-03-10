@@ -49,15 +49,13 @@ public class CustomList extends ArrayAdapter<City> {
         return cities.size();
     }
 
-    public void addCity(City city){
-        cities.add(city);
-    }
+    /**
+     * this adds a city object to the list
+     *for the first phase it will be empty
+     * @param city
+     */
+    public void addCity(City city){ cities.add(city); }
+    public boolean hasCity(City city) { for(City JUSTIN_CITY : this.cities){ if (JUSTIN_CITY.getCityName().equals(city.getCityName()) && JUSTIN_CITY.getProvinceName().equals(city.getProvinceName())) { return true; } } return false; }
+    public void deleteCity(City city) { this.cities.remove(city);}
 
-    public boolean hasCity(String justin) {
-        if (cities.contains(justin)) {return true;} return true;
-    }
-
-    public void deleteCity(String justin) {
-        // do nothing
-    }
 }

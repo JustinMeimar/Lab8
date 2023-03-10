@@ -1,6 +1,7 @@
 package com.example.lab8;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -11,10 +12,6 @@ public class CustomListTest {
 
     public CustomList list;
 
-    public CustomList MockCityList() {
-       list = new CustomList(null, new ArrayList < > ());
-       return list;
-    }
     /**
      * this gets size of the list
      * @return
@@ -31,22 +28,35 @@ public class CustomListTest {
      */
     @Test
     public void addCityTest(){
-        list = MockCityList();
+        list = new CustomList(null, new ArrayList<>());
         int listSize = list.getCount();
         list.addCity(new City("Estevan", "SK"));
         assertEquals(list.getCount(),listSize + 1);
     }
 
     @Test
-    public void hasCityTest() {
-        list.addCity(new City("Justin", "Meimar"));
-        assertTrue(list.hasCity("Justin"));
+    public void deleteCityTest() {
+        list = new CustomList(null, new ArrayList<City>());
+        City city = new City("JUSTIN", "CITY");
+        list.addCity(city);
+        assertTrue(list.hasCity(city));
+        list.deleteCity(city);
+        assertFalse(list.hasCity(city));
     }
 
     @Test
-    public void deleteCityTest() {
-        list.addCity(new City("Justin", "Meimar"));
-        list.deleteCity("Justin");
-        assertTrue(list.isEmpty());
+    public void hasCityTest() {
+        list = new CustomList(null, new ArrayList<City>());
+        City city = new City("JUSTIN", "CITY");
+        list.addCity(city);
+        assertTrue(list.hasCity(city));
+        assertFalse(list.hasCity(new City("JUSTIN", "CITY")));
+    }
+
+    @Test
+    public void countCityTest() {
+        list = new CustomList(null, new ArrayList<City>());
+        list.addCity(new City("JUSTIN ", "MEIMAR"));
+        assertEquals(1, list.getCount());
     }
 }
