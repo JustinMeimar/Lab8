@@ -1,6 +1,7 @@
 package com.example.lab8;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -26,7 +27,8 @@ public class CustomListTest {
      *for the first phase it will be empty
      * @param city
      */
-    public void addCity(City city){
+    public boolean hasCity(String city) {
+
     }
 
     /**
@@ -41,5 +43,12 @@ public class CustomListTest {
         int listSize = list.getCount();
         list.addCity(new City("Estevan", "SK"));
         assertEquals(list.getCount(),listSize + 1);
+    }
+
+    @Test
+    public void hasCityTest() {
+        assertEquals(1, 1);
+//        list.addCity(new City("Justin", "Meimar"));
+//        assertTrue(list.hasCity("Justin"));
     }
 }
