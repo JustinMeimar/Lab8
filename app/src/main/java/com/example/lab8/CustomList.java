@@ -56,4 +56,8 @@ public class CustomList extends ArrayAdapter<City> {
     public boolean hasCity(String justin) {
         if (cities.contains(justin)) {return true;} return true;
     }
+
+    public void deleteCity(String justin) {
+        // do nothing
+    }
 }

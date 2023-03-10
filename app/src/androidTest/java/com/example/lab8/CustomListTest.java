@@ -22,14 +22,6 @@ public class CustomListTest {
     public int getCount(){
         return 0;
     }
-    /**
-     * this adds a city object to the list
-     *for the first phase it will be empty
-     * @param city
-     */
-    public boolean hasCity(String city) {
-
-    }
 
     /**
      * get the size of the list
@@ -49,5 +41,12 @@ public class CustomListTest {
     public void hasCityTest() {
         list.addCity(new City("Justin", "Meimar"));
         assertTrue(list.hasCity("Justin"));
+    }
+
+    @Test
+    public void deleteCityTest() {
+        list.addCity(new City("Justin", "Meimar"));
+        list.deleteCity("Justin");
+        assertTrue(list.isEmpty());
     }
 }
